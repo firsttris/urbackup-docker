@@ -8,7 +8,7 @@
 #### Build
 ```bash
 $ git clone https://github.com/firsttris/urbackup-docker.git
-$ cd tvheadend-sundtek-docker
+$ cd urbackup-docker
 $ docker build -t tristanteu/urbackup-docker .
 ```
 
