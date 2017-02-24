@@ -26,8 +26,7 @@ docker run \
 ```
 
 #### Important - First Start
-on the first start urbackup complains about the backup directory  
-set /var/urbackup to your backup directory (settings)  
-mount this directory to your actual backup directory on your host  
-like in the example above:
-`-v /home/docker/urbackup/:/var/urbackup`
+- on the first start urbackup complains about the backup directory  
+- set /var/urbackup to your backup directory (settings)  
+- mount this directory to your actual backup directory on your host  
+`-v /media/12TBWDRED/yourActualBackupDirectory/:/var/urbackup`
