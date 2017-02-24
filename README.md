@@ -3,9 +3,7 @@
 
 [![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/tristanteu/urbackup-docker/)
 
-
 `Version 2.1.18`
-
 
 #### Build
 ```bash
@@ -27,6 +25,9 @@ docker run \
 -d urbackup/2.1.18
 ```
 
-#### Notes
-- on first start of urbackup set /var/urbackup to you backup directory (settings)
-- mount this directory to the backup directory on your host e.g. -v /home/docker/urbackup/:/var/urbackup \
+#### Important - First Start
+on the first start urbackup complains about the backup directory  
+set /var/urbackup to your backup directory (settings)  
+mount this directory to your actual backup directory on your host  
+like in the example above:
+`-v /home/docker/urbackup/:/var/urbackup`
