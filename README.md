@@ -1,5 +1,5 @@
 # urbackup-docker
-:floppy_disk: small docker container for urbackup
+:floppy_disk: small docker container for urbackup-server
 
 [![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/tristanteu/urbackup-docker/)
 
