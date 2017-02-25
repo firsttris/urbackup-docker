@@ -8,12 +8,14 @@ RUN DEBIAN_FRONTEND=noninteractive dpkg -i /root/urbackup.deb  || true
 RUN apt-get update
 RUN apt-get install -y -f
 
+ADD backupfolder /etc/urbackup/backupfolder
+RUN chmod +x /etc/urbackup/backupfolder
+
 EXPOSE 55413
 EXPOSE 55414
 EXPOSE 55415
 EXPOSE 35623
 
-ADD backupfolder /etc/urbackup/backupfolder
 VOLUME [ "/var/urbackup", "/var/log", "/backup"]
 ENTRYPOINT ["/usr/bin/urbackupsrv"]
 CMD ["run"]

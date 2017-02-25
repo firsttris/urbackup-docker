@@ -26,8 +26,15 @@ docker run \
 --net="host" \
 -d tristanteu/urbackup-docker
 ```
+### Show All CLI Commands
+```bash
+docker run \
+--rm tristanteu/urbackup-docker --help
+```
 
 ### Remove-Unkown
+Cleaning the backup folder of files not known by UrBackup Database  
+[urbackup dokumentation](https://www.urbackup.org/administration_manual.html#x1-10000011.4)  
 ```bash
 docker run \
 -v /home/docker/urbackup/db/:/var/urbackup \
@@ -36,20 +43,17 @@ docker run \
 ```
 
 ### Cleanup
+Percent of space to free on the backup storage or the number of Bytes/ Megabytes/ Gigabytes e.g. “20G” or “10%”.  
+If it should only delete old backups use “0%”.  
+[urbackup dokumentation](https://www.urbackup.org/administration_manual.html#x1-9900011.3)  
 ```bash
 docker run \
 -v /home/docker/urbackup/db/:/var/urbackup \
 -v /media/8tb.wd.red/backup/:/backup \
---rm tristanteu/urbackup-docker cleanup
+--rm tristanteu/urbackup-docker cleanup --amount 0%
 ```
 
-### All Commands
-```bash
-docker run \
---rm tristanteu/urbackup-docker --help
-```
-
-### alternative to Network Mode
+### Network Mode
 if you don't want to use net="host" you can expose the following ports
 ```bash
 -p 55413-55415:55413-55415 \
