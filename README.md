@@ -1,9 +1,14 @@
 # urbackup-docker
-:floppy_disk: small docker container for urbackup-server
+:floppy_disk: docker container for urbackup-server
 
 [![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/tristanteu/urbackup-docker/)
 
 `Version 2.1.18`
+
+UrBackup is an easy to setup Open Source client/server backup system, that through a combination of image and file backups accomplishes both data safety and a fast restoration time.
+
+[www.urbackup.org](https://www.urbackup.org/index.html)
+
 
 ### Build
 ```bash
@@ -43,8 +48,8 @@ docker run \
 ```
 
 ### Cleanup
-Percent of space to free on the backup storage or the number of Bytes/ Megabytes/ Gigabytes e.g. “20G” or “10%”.  
-If it should only delete old backups use “0%”.  
+Percent of space to free on the backup storage or the number of Bytes/ Megabytes/ Gigabytes e.g. â€œ20Gâ€ or â€œ10%â€.  
+If it should only delete old backups use â€œ0%â€.  
 [urbackup dokumentation](https://www.urbackup.org/administration_manual.html#x1-9900011.3)  
 ```bash
 docker run \
