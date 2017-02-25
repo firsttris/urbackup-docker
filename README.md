@@ -19,14 +19,18 @@ docker pull tristanteu/urbackup-docker
 docker run \
 --name urbackup \
 -v /etc/localtime:/etc/localtime:ro \
--v /home/docker/urbackup/:/var/urbackup \
--p 55413-55415:55413-55415 \
--p 35623:35623 \
--d urbackup/2.1.18
+-v /home/docker/urbackup/db/:/var/urbackup \
+-v /media/8tb.wd.red/backup/:/backup \
+--net="host" \
+-d tristanteu/urbackup-docker
 ```
 
 #### Important - First Start
 - on the first start urbackup complains about the backup directory  
-- set /var/urbackup to your backup directory (settings)  
+- set /backup to your backup directory (settings)  
 - mount this directory to your actual backup directory on your host  
-`-v /media/12TBWDRED/yourActualBackupDirectory/:/var/urbackup`
+`-v /media/12TBWDRED/yourActualBackupDirectory/:/backup`
+- ensure correct permissions on the host folders your mounting  
+e.g.  
+chmod 777 -R /home/docker/urbackup/  
+chmod 777 -R /media/8tb.wd.red/backup/
