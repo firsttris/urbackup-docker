@@ -1,5 +1,5 @@
 FROM debian:latest
-ENV VERSION 2.1.18
+ENV VERSION 2.1.19
 MAINTAINER Tristan Teufel <info@teufel-it.de>
 
 ADD https://www.urbackup.org/downloads/Server/${VERSION}/debian/stable/urbackup-server_${VERSION}_amd64.deb /root/urbackup.deb
