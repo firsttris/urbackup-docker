@@ -10,12 +10,6 @@ UrBackup is an easy to setup Open Source client/server backup system, that throu
 [www.urbackup.org](https://www.urbackup.org/index.html)
 
 
-### Build
-```bash
-$ git clone https://github.com/firsttris/urbackup-docker.git
-$ cd urbackup-docker
-$ docker build -t tristanteu/urbackup-docker .
-```
 ### Pull:
 ```bash
 docker pull tristanteu/urbackup-docker
@@ -25,13 +19,14 @@ docker pull tristanteu/urbackup-docker
 ```bash
 docker run \
 --name urbackup \
+--restart=always \
 -v /etc/localtime:/etc/localtime:ro \
 -v /home/docker/urbackup/db/:/var/urbackup \
 -v /media/8tb.wd.red/backup/:/backup \
 --net="host" \
 -d tristanteu/urbackup-docker
 ```
-### Show All CLI Commands
+### Show all Cli Commands
 ```bash
 docker run \
 --rm tristanteu/urbackup-docker --help
@@ -63,6 +58,13 @@ if you don't want to use net="host" you can expose the following ports
 ```bash
 -p 55413-55415:55413-55415 \
 -p 35623:35623 \
+```
+
+### Build
+```bash
+$ git clone https://github.com/firsttris/urbackup-docker.git
+$ cd urbackup-docker
+$ docker build -t tristanteu/urbackup-docker .
 ```
 
 ### Important - First Start
