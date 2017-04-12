@@ -78,3 +78,6 @@ e.g.
 chmod 777 -R /home/docker/urbackup/  
 chmod 777 -R /media/8tb.wd.red/backup/
 ```
+
+## License
+[MIT](http://opensource.org/licenses/MIT)
