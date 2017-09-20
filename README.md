@@ -26,6 +26,10 @@ docker run \
 --net="host" \
 -d tristanteu/urbackup-docker
 ```
+
+### WebUI
+yourserverip:55414
+
 ### Show all Cli Commands
 ```bash
 docker run \
