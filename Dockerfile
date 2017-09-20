@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:jessie
 ENV VERSION 2.1.19
 MAINTAINER Tristan Teufel <info@teufel-it.de>
 
