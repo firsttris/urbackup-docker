@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 ENV VERSION 2.1.20
 MAINTAINER Tristan Teufel <info@teufel-it.de>
 
