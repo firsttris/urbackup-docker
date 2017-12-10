@@ -3,7 +3,7 @@
 
 [![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/tristanteu/urbackup-docker/)
 
-`Version 2.1.19`
+`Version 2.1.20`
 
 UrBackup is an easy to setup Open Source client/server backup system, that through a combination of image and file backups accomplishes both data safety and a fast restoration time.
 
@@ -83,8 +83,9 @@ chmod 777 -R /home/docker/urbackup/
 chmod 777 -R /media/8tb.wd.red/backup/
 ```
 
-## Donate
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KEAR9ZC228YCL)
+## Code of Conduct
+See the [CODE](CODE_OF_CONDUCT.md)
+
 
 ## License
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
