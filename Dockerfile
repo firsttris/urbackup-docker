@@ -1,5 +1,5 @@
 FROM debian:stretch
-ENV VERSION 2.1.20
+ENV VERSION 2.2.8
 MAINTAINER Tristan Teufel <info@teufel-it.de>
 
 RUN apt-get update
