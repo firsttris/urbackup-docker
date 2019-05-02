@@ -1,11 +1,16 @@
 FROM debian:stretch
-ENV VERSION 2.2.11
+ARG VERSION=latest
 MAINTAINER Tristan Teufel <info@teufel-it.de>
 
 RUN apt-get update
-RUN apt-get install sqlite3 libcrypto++6 libcurl3 libfuse2 -y
+RUN apt-get install sqlite3 libcrypto++6 libcurl3 libfuse2 wget -y
 
-ADD https://www.urbackup.org/downloads/Server/${VERSION}/debian/stretch/urbackup-server_${VERSION}_amd64.deb /root/urbackup.deb
+RUN if [ "${VERSION}" = "latest" ] ; then \
+    LATEST=$(wget https://hndl.urbackup.org/Server/latest/debian/stretch/ -q -O - | tr '\n' '\r' | sed -r 's/.*server_([0-9\.]+)_amd64\.deb.*/\1/') && \
+    wget -O /root/urbackup.deb https://hndl.urbackup.org/Server/latest/debian/stretch/urbackup-server_${LATEST}_amd64.deb; \
+    else wget -O /root/urbackup.deb https://www.urbackup.org/downloads/Server/${VERSION}/debian/stretch/urbackup-server_${VERSION}_amd64.deb; \
+    fi
+
 RUN DEBIAN_FRONTEND=noninteractive dpkg -i /root/urbackup.deb  || true
 
 ADD backupfolder /etc/urbackup/backupfolder
