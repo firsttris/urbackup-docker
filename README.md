@@ -25,6 +25,27 @@ docker run \
 -d tristanteu/urbackup-docker
 ```
 
+### Docker-compose.yml - needed setting for native btrfs storage snapshots
+>  cap_add:
+>     - SYS_ADMIN 
+
+### Docker-compose.yml example:
+```bash
+  urbackup:
+    image: tristanteu/urbackup-docker
+    container_name: urbackup
+    network_mode: host
+    cap_add:
+     - SYS_ADMIN
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /srv/docker/compose/urbackup:/var/urbackup
+    - /media/backup:/backup
+    environment:
+    - TZ=Europe/Vienna
+    restart: always
+```
+
 ### WebUI
 yourserverip:55414
 
