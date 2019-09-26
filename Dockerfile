@@ -3,7 +3,7 @@ ARG VERSION=latest
 MAINTAINER Tristan Teufel <info@teufel-it.de>
 
 RUN apt-get update
-RUN apt-get install sqlite3 libcrypto++6 libcurl3 libfuse2 wget -y
+RUN apt-get install sqlite3 libcrypto++6 libcurl3 libfuse2 wget btrfs-tools -y
 
 RUN if [ "${VERSION}" = "latest" ] ; then \
     LATEST=$(wget https://hndl.urbackup.org/Server/latest/debian/stretch/ -q -O - | tr '\n' '\r' | sed -r 's/.*server_([0-9\.]+)_amd64\.deb.*/\1/') && \
