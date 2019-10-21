@@ -21,6 +21,9 @@ EXPOSE 55414
 EXPOSE 55415
 EXPOSE 35623
 
+HEALTHCHECK  --interval=5m --timeout=3s \
+  CMD wget --quiet --tries=1 --spider http://localhost:55414/ || exit 1
+
 VOLUME [ "/var/urbackup", "/var/log", "/backup"]
 ENTRYPOINT ["/usr/bin/urbackupsrv"]
 CMD ["run"]
